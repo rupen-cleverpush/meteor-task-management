@@ -3,8 +3,6 @@ import { TasksCollection } from "./TasksCollection";
 
 Meteor.methods({
   "tasks.insert"(doc) {
-    console.log(this.userId, "this.userId");
-    
     return TasksCollection.insertAsync({
       ...doc,
       userId: this.userId,
